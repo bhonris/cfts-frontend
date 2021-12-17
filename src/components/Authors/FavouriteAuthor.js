@@ -1,22 +1,19 @@
-import axios from "axios"
 import React, { useState } from "react";
 import SelectedAuthor from './SelectedAuthor'
-
+import fetchAuthors from './_fetchAuthors'
 const FavouriteAuthor = () => {
   const [authors, setAuthors] = useState([]);
   const [author, setAuthor] = useState("");
 
-  const fetchAuthors = () => {
-    const AUTHORS_ENDPOINT = "https://jsonplaceholder.typicode.com/users";
-    axios.get(AUTHORS_ENDPOINT).then(res => res.data).then(authors => {
+  const getAuthors = () => {
+    fetchAuthors().then(authors => {
       setAuthors(authors);
     });
-
   }
   return (
     <>
       <h1> Select your favorite Author</h1>
-      <button onClick={fetchAuthors}>Get Authors</button>
+      <button onClick={getAuthors}>Get Authors</button>
       <select
         name="category"
         value={author}

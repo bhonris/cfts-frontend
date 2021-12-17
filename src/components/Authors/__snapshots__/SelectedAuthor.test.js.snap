@@ -1,0 +1,8 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Test for Seelcted Author should match blank author snapshot 1`] = `
+<label>
+  No Author Selected
+</label>
+`;
+
