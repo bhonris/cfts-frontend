@@ -1,8 +1,8 @@
 import App from './App';
-import { shallow } from 'enzyme'
+import { mount } from 'enzyme'
 import toJSON from "enzyme-to-json";
 
 test('renders learn react link', () => {
-  const component = shallow(<App />);
+  const component = mount(<App />);
   expect(toJSON(component)).toMatchSnapshot();
 });
